@@ -1,6 +1,6 @@
 <?php 
 error_reporting(0);
-include '../_business/siteSettings.response.php';
+include '../_business/site-settings.response.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

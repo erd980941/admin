@@ -11,7 +11,7 @@
                 <div class="card-body">
                     <img src="<?php echo $siteLogoPath ?>" class="img-responsive" width="300">
                     <hr>
-                    <form action="../_business/siteSettings.request.php" method="post" enctype="multipart/form-data">
+                    <form action="../_business/site-settings.request.php" method="post" enctype="multipart/form-data">
                         <input class="form-control" type="file" id="formFile" name="site_logo">
                         <div class="d-grid gap-2 mt-2">
                             <button type="submit" name="site_logo" class="btn btn-primary">Kaydet</button>
@@ -30,7 +30,7 @@
             <!-- Card Content - Collapse -->
             <div class="collapse show" id="siteSettings" style="">
                 <div class="card-body">
-                    <form action="../_business/siteSettings.request.php" method="post">
+                    <form action="../_business/site-settings.request.php" method="post">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -97,7 +97,7 @@
             <!-- Card Content - Collapse -->
             <div class="collapse show" id="siteEmail" style="">
                 <div class="card-body">
-                    <form action="../_business/siteSettings.request.php" method="post">
+                    <form action="../_business/site-settings.request.php" method="post">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
@@ -156,7 +156,7 @@
             <!-- Card Content - Collapse -->
             <div class="collapse show" id="siteContactInformation" style="">
                 <div class="card-body">
-                    <form action="../_business/siteSettings.request.php" method="post">
+                    <form action="../_business/site-settings.request.php" method="post">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">

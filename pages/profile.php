@@ -8,7 +8,7 @@
             </a>
             <div class="collapse show" id="adminUsername" style="">
                 <div class="card-body">
-                    <form action="../_business/adminProfile.php" method="post">
+                    <form action="../_business/admin-profile.php" method="post">
                         <div class="mb-3">
                             <label class="form-label">Kullanıcı Adı</label>
                             <input type="text" class="form-control" name="admin_username">
@@ -30,7 +30,7 @@
             </a>
             <div class="collapse show" id="adminPassword" style="">
                 <div class="card-body">
-                    <form action="../_business/adminProfile.php" method="post">
+                    <form action="../_business/admin-profile.php" method="post">
                         <div class="mb-3">
                             <label class="form-label">Eski Şifre</label>
                             <input type="text" class="form-control" name="currentPassword" >
