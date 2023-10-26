@@ -1,10 +1,4 @@
-<?php 
-session_start();
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
-    header('Location: login');
-    exit;
-}
-?>
+<?php include_once '../_business/sessionConfig.php' ?>
 <?php include_once 'views/header.php' ?>
 <!-- Page Wrapper -->
 <div id="wrapper">
