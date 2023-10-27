@@ -1,5 +1,5 @@
 <?php
-require_once '../_classes/siteSettings.class.php';
+require_once '../_classes/site-settings.class.php';
 $siteSettingsModel = new SiteSettings();
 
 //-----------------Smtp Email Ayarları------------------

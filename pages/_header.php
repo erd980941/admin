@@ -1,4 +1,4 @@
-<?php include_once '../_business/sessionConfig.php' ?>
+<?php include_once '../_business/session-config.php' ?>
 <?php include_once 'views/header.php' ?>
 <!-- Page Wrapper -->
 <div id="wrapper">

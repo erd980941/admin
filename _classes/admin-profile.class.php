@@ -1,5 +1,5 @@
 <?php
-require_once '../_data_access/dbConnector.php';
+require_once '../_data_access/db-connector.php';
 
 class AdminProfile
 {

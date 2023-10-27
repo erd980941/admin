@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../_classes/adminProfile.class.php';
+include_once '../_classes/admin-profile.class.php';
 $adminProfileModel = new AdminProfile();
 
 

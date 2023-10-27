@@ -1,5 +1,5 @@
 <?php
-require_once '../_classes/siteSettings.class.php';
+require_once '../_classes/site-settings.class.php';
 $siteSettingsModel = new SiteSettings();
 
 //--------------------- Site Ayarları ---------------------
@@ -73,7 +73,7 @@ if (isset($_POST['site_email'])) {
 }
 
 
-//--------------------- Site Email ---------------------
+//--------------------- Site LOGO ---------------------
 if (isset($_POST['site_logo'])) {
     $uploadDirectory = '../../assets/img/';
     $uploadedFile = $uploadDirectory. uniqid() . "-logo." .pathinfo($_FILES['site_logo']['name'], PATHINFO_EXTENSION);
