@@ -76,47 +76,49 @@ if (isset($_POST['site_email'])) {
 //--------------------- Site LOGO ---------------------
 if (isset($_POST['site_logo'])) {
     $uploadDirectory = '../../assets/img/';
-    $uploadedFile = $uploadDirectory. uniqid() . "-logo." .pathinfo($_FILES['site_logo']['name'], PATHINFO_EXTENSION);
-    $uploadedExtension = pathinfo($_FILES['site_logo']['name'], PATHINFO_EXTENSION);
+    $fileExtension = pathinfo($_FILES['site_logo']['name'], PATHINFO_EXTENSION);
+    $uploadedFile = $_FILES['site_logo']['tmp_name'];
     $allowedExtensions = ['jpg', 'jpeg', 'png'];
-    
-    
 
-    // Geçerli dosya uzantısı kontrolü
-    if (!in_array($uploadedExtension, $allowedExtensions)) {
-        // Geçersiz dosya uzantısı, hata mesajı göster veya yönlendirme yapabilirsiniz
+    $newFileName = uniqid() . "-logo";
+
+
+
+    if (!in_array($fileExtension, $allowedExtensions)) {
         header("Location:../pages/settings.php?error=invalid_extension");
         exit();
     }
 
-    // Dosyayı belirtilen dizine yükle
-    if (move_uploaded_file($_FILES['site_logo']['tmp_name'], $uploadedFile)) {
-        // Dosya yükleme başarılıysa boyut kontrolü ve düşürme
-        $maxFileSize = 1 * 1024 * 1024; // 1 MB
+    $maxFileSize = 1 * 1024 * 1024; // 1 MB
+    $fileSize = filesize($uploadedFile);
 
-       
+    if ($fileSize > $maxFileSize) {
 
-        // Dosya boyutunu kontrol etme
-        if (filesize($uploadedFile) > $maxFileSize) {
-            // Dosya boyutu 1 MB'tan büyükse düşür
-            
-            $image = imagecreatefromstring(file_get_contents($uploadedFile));
-            imagejpeg($image, $targetFile, 75); // 75: JPEG kalitesi (0 ile 100 arasında)
-            imagedestroy($image);
-        }
+        $image = imagecreatefromstring(file_get_contents($uploadedFile));
+        imagejpeg($image, $uploadedFile, 75); // 75: JPEG kalitesi (0 ile 100 arasında)
+        imagedestroy($image);
+    }
 
-        // Eski dosyayı sil
-        $oldLogoPath = $siteSettingsModel->getSiteLogo();
-        unlink($oldLogoPath);
-        // Veritabanında güncelleme işlemleri burada gerçekleştirilebilir
-        $result = $siteSettingsModel->updateSiteLogo($uploadedFile);
+    $targetFile = $uploadDirectory . $newFileName . '.' . $fileExtension;
+    $isUploaded= move_uploaded_file($uploadedFile, $targetFile);
 
+    if (!$isUploaded) { $result=false; goto x; }
+
+    $oldLogoPath = $siteSettingsModel->getSiteLogo();
+    unlink($oldLogoPath);
+    $result = $siteSettingsModel->updateSiteLogo($targetFile);
+
+    x:
+    if ($result) {
         header("Location:../pages/settings.php?success=true");
         exit();
-    } else {
+    }
+    else{
         header("Location:../pages/settings.php?error=true");
         exit();
     }
+
+
 }
 
 

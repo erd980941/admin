@@ -31,7 +31,9 @@ if (isset($_POST['about_us_update'])) {
         }
 
         $targetFile = $uploadDirectory . $newFileName . '.' . $fileExtension;
-        move_uploaded_file($uploadedFile, $targetFile);
+        $isUploaded = move_uploaded_file($uploadedFile, $targetFile);
+
+        if(!$isUploaded) { $resultImage=false;goto x; }
 
         $oldLogoPath = $aboutUsModel->getAboutUsImage();
         unlink($oldLogoPath);
@@ -40,6 +42,8 @@ if (isset($_POST['about_us_update'])) {
     else{
         $resultImage = true;
     }
+
+    x:
 
     $aboutUsData = [
         'about_title' => $_POST['about_title'],
