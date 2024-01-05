@@ -1,5 +1,5 @@
 <?php
-require_once '../_classes/site-settings.class.php';
+require_once __DIR__.'/../_classes/site-settings.class.php';
 $siteSettingsModel = new SiteSettings();
 
 //-----------------Smtp Email Ayarları------------------
@@ -20,7 +20,8 @@ $siteSettingsData = array(
     'site_keywords' => htmlspecialchars($siteSettings['site_keywords']),
     'site_author' => htmlspecialchars($siteSettings['site_author']),
     'site_zopim' => htmlspecialchars($siteSettings['site_zopim']),
-    'site_maps' => htmlspecialchars($siteSettings['site_maps'])
+    'site_maps' => htmlspecialchars($siteSettings['site_maps']),
+    'site_url' => htmlspecialchars($siteSettings['site_url'])
 );
 
 //-----------------İletişim Ayarları------------------
@@ -35,7 +36,7 @@ $siteContactInformationData = array(
 //-----------------LOGO------------------
 $siteLogoPath = htmlspecialchars($siteSettingsModel->getSiteLogo());
 if (empty($siteLogoPath)) {
-    $siteLogoPath = '../../assets/img/no-image.jpg';
+    $siteLogoPath = 'no-image.jpg';
 } else {
     $siteLogoPath = htmlspecialchars($siteLogoPath);
 }

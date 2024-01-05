@@ -1,5 +1,5 @@
 <?php
-require_once '../_classes/about-us.class.php';
+require_once __DIR__.'/../_classes/about-us.class.php';
 $aboutUsModel = new AboutUs();
 
 //-----------------Smtp Email Ayarları------------------
@@ -15,7 +15,7 @@ $aboutUsData = array(
 //-----------------LOGO------------------
 $aboutUsImage = $aboutUsData['about_image'];
 if (empty($aboutUsImage)) {
-    $aboutUsImage = '../../assets/img/no-image.jpg';
+    $aboutUsImage = 'no-image.jpg';
 } else {
     $aboutUsImage = htmlspecialchars($aboutUsImage);
 }

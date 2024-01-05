@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index">
 
         <div class="sidebar-brand-text mx-3">
             <?php echo $siteSettingsData['site_title'] ?>
@@ -21,9 +21,95 @@
     </li>
 
     <li class="nav-item ">
+        <a class="nav-link" href="social-media">
+        <i class="fa-solid fa-hashtag"></i>
+            <span>Sosyal Medya</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
         <a class="nav-link" href="about-us">
         <i class="fa-solid fa-users"></i>
             <span>Hakkımızda</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="mision-vision">
+        <i class="fa-solid fa-puzzle-piece"></i>
+            <span>Misyon ve Vizyon</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="bank-account-list">
+        <i class="fa-solid fa-building-columns"></i>
+            <span>Banka Hesapları</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="our-document-list">
+        <i class="fa-solid fa-file-pdf"></i>
+            <span>Belgelerimiz</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="gallery-item-list">
+        <i class="fa-solid fa-images"></i>
+            <span>Galeri</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="slider-item-list">
+        <i class="fa-solid fa-images"></i>
+            <span>Slider</span>
+        </a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="magaza-slider-list">
+        <i class="fa-solid fa-images"></i>
+            <span>Mağaza Slider</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="our-brands-list">
+        <i class="fa-solid fa-tag"></i>
+            <span>Markalarımız</span>
+        </a>
+    </li>
+
+    
+
+    <li class="nav-item ">
+        <a class="nav-link" href="user-list">
+        <i class="fa-solid fa-user"></i>
+            <span>Kullanıcılar</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="category-list">
+        <i class="fa-solid fa-folder-tree"></i>
+            <span>Kategoriler</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="product-list">
+        <i class="fa-solid fa-box"></i>
+            <span>Ürünler</span>
+        </a>
+    </li>
+
+    <li class="nav-item ">
+        <a class="nav-link" href="order-list">
+        <i class="fa-solid fa-truck"></i>
+            <span>Siparişler</span>
         </a>
     </li>
 
@@ -31,12 +117,12 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
+    <!-- <div class="sidebar-heading">
         Interface
-    </div>
+    </div> -->
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
             aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
@@ -49,10 +135,10 @@
                 <a class="collapse-item" href="cards.html">Cards</a>
             </div>
         </div>
-    </li>
+    </li> -->
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
+    <!-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
@@ -67,7 +153,7 @@
                 <a class="collapse-item" href="utilities-other.html">Other</a>
             </div>
         </div>
-    </li>
+    </li> -->
 
 
 

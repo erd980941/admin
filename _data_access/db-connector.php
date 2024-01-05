@@ -7,9 +7,9 @@ class DbConnector
     private function __construct()
     {
         try {
-            $this->db = new PDO("mysql:host=localhost;dbname=karavan;charset=utf8", 'root', '');
-            //$this->db = new PDO("Data Source Name", 'Username', 'Password');
-            //$this->db = new PDO("mysql:host=localhost;dbname=dbname;charset=utf8", 'root', '');
+            $dbConfig = include(__DIR__ . "/../config/db.php");
+            
+            $this->db = new PDO("mysql:host={$dbConfig['host']};dbname={$dbConfig['dbname']};charset=utf8", $dbConfig['username'], $dbConfig['password']);  
             $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             $this->db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
         } catch (PDOException $e) {

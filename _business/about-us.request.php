@@ -1,7 +1,13 @@
 <?php
-require_once '../_classes/about-us.class.php';
+session_start();
+require_once __DIR__.'/../_classes/about-us.class.php';
 include 'fonksiyon.php';
 $aboutUsModel = new AboutUs();
+
+if (!isset($_SESSION['username']) || $_SESSION['adminLoggedIn'] !== true) {
+    header('Location: ../pages/login');
+    exit;
+}
 
 //--------------------- Site Ayarları ---------------------
 if (isset($_POST['about_us_update'])) {
@@ -13,7 +19,7 @@ if (isset($_POST['about_us_update'])) {
         $uploadedFile = $_FILES['about_image']['tmp_name'];
         $allowedExtensions = ['jpg', 'jpeg', 'png'];
 
-        $newFileName = seo($_POST['about_image_alt']) . "_" . date("Y-m-d_His");
+        $newFileName = seo($_POST['about_image_alt']) . "_" . date("Y-m-d_His").".".$fileExtension;
 
 
         if (!in_array($fileExtension, $allowedExtensions)) {
@@ -30,20 +36,21 @@ if (isset($_POST['about_us_update'])) {
             imagedestroy($image);
         }
 
-        $targetFile = $uploadDirectory . $newFileName . '.' . $fileExtension;
+        $targetFile = $uploadDirectory . $newFileName ;
         $isUploaded = move_uploaded_file($uploadedFile, $targetFile);
+        
 
         if(!$isUploaded) { $resultImage=false;goto x; }
 
         $oldLogoPath = $aboutUsModel->getAboutUsImage();
-        unlink($oldLogoPath);
-        $resultImage = $aboutUsModel->updateAboutUsImage($targetFile);
+        unlink("../../assets/img/".$oldLogoPath);
+        $resultImage = $aboutUsModel->updateAboutUsImage($newFileName);
     }
     else{
         $resultImage = true;
     }
 
-    x:
+    
 
     $aboutUsData = [
         'about_title' => $_POST['about_title'],
@@ -52,6 +59,8 @@ if (isset($_POST['about_us_update'])) {
     ];
 
     $result = $aboutUsModel->updateAboutUs($aboutUsData);
+
+    x:
 
     if ($result && $resultImage) {
         header("Location:../pages/about-us?success=true");

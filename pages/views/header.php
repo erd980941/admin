@@ -1,6 +1,6 @@
 <?php 
 error_reporting(0);
-include '../_business/site-settings.response.php';
+include __DIR__.'/../../_business/site-settings.response.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,6 +24,8 @@ include '../_business/site-settings.response.php';
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 

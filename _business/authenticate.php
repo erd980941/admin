@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../_classes/authenticate.class.php';
+include_once __DIR__.'/../_classes/authenticate.class.php';
 $checkAdminCredentialsModel = new Authenticate();
 
 
@@ -16,7 +16,8 @@ if (isset($_POST['admin_login'])) {
 
     if ($isValidUser) {
         // Doğrulama başarılıysa oturumu başlat ve ana sayfaya yönlendir
-        $_SESSION['loggedin'] = true;
+        $_SESSION['username'] = $username;
+        $_SESSION['adminLoggedIn'] = true;
         header('Location:../pages/index'); // Kullanıcıyı yönlendir
         exit;
     } else {

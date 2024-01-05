@@ -1,5 +1,12 @@
 <?php
-require_once '../_classes/site-settings.class.php';
+session_start();
+require_once __DIR__.'/../_classes/site-settings.class.php';
+
+if (!isset($_SESSION['username']) || $_SESSION['adminLoggedIn'] !== true) {
+    header('Location: ../pages/login');
+    exit;
+}
+
 $siteSettingsModel = new SiteSettings();
 
 //--------------------- Site Ayarları ---------------------
@@ -11,6 +18,7 @@ if (isset($_POST['site_settings'])) {
         'site_author' => $_POST['site_author'],
         'site_zopim' => $_POST['site_zopim'],
         'site_maps' => $_POST['site_maps'],
+        'site_url' => $_POST['site_url'],
     ];
 
     $result = $siteSettingsModel->updateSiteSettings($siteSettingsData);
@@ -85,7 +93,7 @@ if (isset($_POST['site_logo'])) {
 
 
     if (!in_array($fileExtension, $allowedExtensions)) {
-        header("Location:../pages/settings.php?error=invalid_extension");
+        header("Location:../pages/settings?error=invalid_extension");
         exit();
     }
 
@@ -105,16 +113,16 @@ if (isset($_POST['site_logo'])) {
     if (!$isUploaded) { $result=false; goto x; }
 
     $oldLogoPath = $siteSettingsModel->getSiteLogo();
-    unlink($oldLogoPath);
-    $result = $siteSettingsModel->updateSiteLogo($targetFile);
+    unlink("../../assets/img/".$oldLogoPath);
+    $result = $siteSettingsModel->updateSiteLogo($newFileName . '.' . $fileExtension);
 
     x:
     if ($result) {
-        header("Location:../pages/settings.php?success=true");
+        header("Location:../pages/settings?success=true");
         exit();
     }
     else{
-        header("Location:../pages/settings.php?error=true");
+        header("Location:../pages/settings?error=true");
         exit();
     }
 

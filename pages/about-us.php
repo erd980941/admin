@@ -9,13 +9,13 @@
             </a>
             <div class="collapse show" id="aboutUs" style="">
                 <div class="card-body">
-                    <img src="<?php echo $aboutUsImage ?>" class="img-responsive" width="300">
+                    <img src="../../assets/img/<?php echo $aboutUsImage ?>" class="img-responsive" width="300">
                     <hr>
                     <form action="../_business/about-us.request.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label class="form-label">Fotoğraf</label>
-                            <input type="file" class="form-control" name="about_image"
-                                value="<?php echo $aboutUsData['about_image'] ?>">
+                            <input type="file" class="form-control" name="about_image">
+                            <div  class="form-text">İzin Verilen Uzantılar ( jpg, jpeg, png ), Dosya En Boy Oranı 1:1 Olmalıdır.</div>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Fotoğraf Açıklama</label>

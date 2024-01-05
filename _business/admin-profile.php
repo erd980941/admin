@@ -1,9 +1,12 @@
 <?php
 session_start();
-include_once '../_classes/admin-profile.class.php';
+include_once __DIR__.'/../_classes/admin-profile.class.php';
 $adminProfileModel = new AdminProfile();
 
-
+if (!isset($_SESSION['username']) || $_SESSION['adminLoggedIn'] !== true) {
+    header('Location: ../pages/login');
+    exit;
+}
 
 
 if (isset($_POST['admin_changePassword'])) {

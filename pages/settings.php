@@ -7,13 +7,13 @@
                 <h6 class="m-0 font-weight-bold text-primary">LOGO</h6>
             </a>
             <!-- Card Content - Collapse -->
-            <div class="collapse show" id="siteLogo" style="">
+            <div class="collapse show " id="siteLogo" style="">
                 <div class="card-body">
-                    <img src="<?php echo $siteLogoPath ?>" class="img-responsive" width="300">
-                    <hr>
-                    <form action="../_business/site-settings.request.php" method="post" enctype="multipart/form-data">
+                    <img src="../../assets/img/<?php echo $siteLogoPath ?>" class="img-responsive" width="300">
+                    <hr class="my-4">
+                    <form  class="mt-5" action="../_business/site-settings.request.php" method="post" enctype="multipart/form-data">
                         <input class="form-control" type="file" id="formFile" name="site_logo">
-                        <div class="d-grid gap-2 mt-2">
+                        <div class="d-grid gap-2 mt-3">
                             <button type="submit" name="site_logo" class="btn btn-primary">Kaydet</button>
                         </div>
                     </form>
@@ -77,6 +77,15 @@
                                     <label class="form-label">Maps</label>
                                     <input type="text" class="form-control"
                                         value="<?php echo $siteSettingsData['site_maps'] ?>" name="site_maps">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Site URL</label>
+                                    <input type="text" class="form-control"
+                                        value="<?php echo $siteSettingsData['site_url'] ?>" name="site_url">
                                 </div>
                             </div>
                         </div>

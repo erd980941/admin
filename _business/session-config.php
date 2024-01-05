@@ -12,9 +12,12 @@ session_set_cookie_params(
 );
 session_start();
 
-if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+if (isset($_SESSION['username'])  && $_SESSION['adminLoggedIn']==true ) {
+    $loggedIn=true;
+}
+else{
+    $loggedIn=false;
     header('Location: login');
-    exit;
 }
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once '../_data_access/db-connector.php';
+require_once __DIR__.'/../_data_access/db-connector.php';
 
 class SiteSettings
 {
@@ -22,6 +22,7 @@ class SiteSettings
         $siteAuthor = $siteSettingsData['site_author'];
         $siteZopim = $siteSettingsData['site_zopim'];
         $siteMaps = $siteSettingsData['site_maps'];
+        $siteUrl = $siteSettingsData['site_url'];
 
         $query = "UPDATE site_settings SET 
                   site_title = :site_title, 
@@ -29,7 +30,8 @@ class SiteSettings
                   site_keywords = :site_keywords, 
                   site_author = :site_author, 
                   site_zopim = :site_zopim,
-                  site_maps = :site_maps 
+                  site_maps = :site_maps,
+                  site_url = :site_url
                   WHERE site_id = 0";
 
         $statement = $this->db->prepare($query);
@@ -39,6 +41,7 @@ class SiteSettings
         $statement->bindParam(':site_author', $siteAuthor);
         $statement->bindParam(':site_zopim', $siteZopim);
         $statement->bindParam(':site_maps', $siteMaps);
+        $statement->bindParam(':site_url', $siteUrl);
 
         // Güncelleme işlemini gerçekleştir
         if ($statement->execute()) {
@@ -148,5 +151,20 @@ class SiteSettings
             return false;
         }
     }
+
+    public function getAllSettingForEmail(){
+        $query='SELECT
+        ss.site_id,ss.site_title,ss.site_url,
+        sci.site_city,sci.site_district,sci.site_address,sci.site_tel,
+        se.site_smtpEmail,se.site_smtpHost,se.site_smtpUser,se.site_smtpPassword,se.site_smtpPort
+        FROM site_settings ss
+        INNER JOIN site_email se ON ss.site_id=se.site_id
+        INNER JOIN site_contact_information sci ON ss.site_id=sci.site_id
+        WHERE ss.site_id=0';
+        $statement = $this->db->query($query);
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+   
 }
 ?>
