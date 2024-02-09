@@ -17,7 +17,6 @@ if (isset($_POST['site_settings'])) {
         'site_keywords' => $_POST['site_keywords'],
         'site_author' => $_POST['site_author'],
         'site_zopim' => $_POST['site_zopim'],
-        'site_maps' => $_POST['site_maps'],
         'site_url' => $_POST['site_url'],
     ];
 
@@ -38,10 +37,14 @@ if (isset($_POST['site_settings'])) {
 //--------------------- Site İletişim Ayarları ---------------------
 if (isset($_POST['site_contact_information'])) {
     $contactInformationData = [
+        'site_contact_text' => $_POST['site_contact_text'],
         'site_city' => $_POST['site_city'],
         'site_district' => $_POST['site_district'],
         'site_address' => $_POST['site_address'],
+        'site_maps' => $_POST['site_maps'],
         'site_tel' => $_POST['site_tel'],
+        'site_whatsapp' => $_POST['site_whatsapp'],
+        'site_email' => $_POST['site_email'],
     ];
 
 

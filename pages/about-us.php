@@ -9,7 +9,7 @@
             </a>
             <div class="collapse show" id="aboutUs" style="">
                 <div class="card-body">
-                    <img src="../../assets/img/<?php echo $aboutUsImage ?>" class="img-responsive" width="300">
+                    <img src="../../assets/img/<?php echo $aboutUs['about_image'] ?>" class="img-responsive" width="300">
                     <hr>
                     <form action="../_business/about-us.request.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
@@ -20,18 +20,18 @@
                         <div class="mb-3">
                             <label class="form-label">Fotoğraf Açıklama</label>
                             <input type="text" class="form-control" name="about_image_alt"
-                                value="<?php echo $aboutUsData['about_image_alt'] ?>">
+                                value="<?php echo $aboutUs['about_image_alt'] ?>">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Başlık</label>
                             <input type="text" class="form-control" name="about_title"
-                                value="<?php echo $aboutUsData['about_title'] ?>">
+                                value="<?php echo $aboutUs['about_title'] ?>">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">İçerik</label>
-                            <!-- <textarea type="text" class="form-control" name="about_content"><?php echo $aboutUsData['about_content'] ?></textarea> -->
+                            <!-- <textarea type="text" class="form-control" name="about_content"><?php echo $aboutUs['about_content'] ?></textarea> -->
                             <textarea class="editor" name="about_content">
-                                <?php echo $aboutUsData['about_content'] ?>
+                                <?php echo $aboutUs['about_content'] ?>
                             </textarea>
                         </div>
                         <div class="d-grid gap-2">

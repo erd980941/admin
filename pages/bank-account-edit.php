@@ -12,40 +12,59 @@
 
                 <form action="../_business/bank-account.request.php" method="post">
                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label class="form-label">Para Birimi</label>
+                                <select name="currency_type" class="form-select">
+                                    <option value="TRY" <?php echo $bankAccount['currency_type']=='TRY'?'selected':'' ?>>TRY</option>
+                                    <option value="USD" <?php echo $bankAccount['currency_type']=='USD'?'selected':'' ?>>USD</option>
+                                    <option value="EUR" <?php echo $bankAccount['currency_type']=='EUR'?'selected':'' ?>>EUR</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Banka Adı</label>
-                                <input class="form-control" type="text" name="bank_name" value="<?php echo $bankAccount['bank_name'] ?>" required>
+                                <input class="form-control" type="text" name="bank_name"
+                                    value="<?php echo $bankAccount['bank_name'] ?>" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Hesap Adı</label>
-                                <input class="form-control" type="text" name="account_name" value="<?php echo $bankAccount['account_name'] ?>" required>
+                                <input class="form-control" type="text" name="account_name"
+                                    value="<?php echo $bankAccount['account_name'] ?>" required>
                             </div>
                         </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">IBAN</label>
-                        <input class="form-control" type="text" name="account_iban" value="<?php echo $bankAccount['account_iban'] ?>" required>
+                        <input class="form-control" type="text" name="account_iban"
+                            value="<?php echo $bankAccount['account_iban'] ?>" required>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Hesap No</label>
-                                <input class="form-control" type="text" name="account_number" value="<?php echo $bankAccount['account_number'] ?>" required>
+                                <input class="form-control" type="text" name="account_number"
+                                    value="<?php echo $bankAccount['account_number'] ?>" required>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Şube Kodu</label>
-                                <input class="form-control" type="text" value="<?php echo $bankAccount['account_branch_code'] ?>" name="account_branch_code">
+                                <input class="form-control" type="text"
+                                    value="<?php echo $bankAccount['account_branch_code'] ?>"
+                                    name="account_branch_code">
                             </div>
                         </div>
                     </div>
 
                     <div class="d-grid gap-2 mt-2">
-                        <input type="hidden" class="form-control" name="account_id" value="<?php echo $bankAccount['account_id'] ?>" >
+                        <input type="hidden" class="form-control" name="account_id"
+                            value="<?php echo $bankAccount['account_id'] ?>">
                         <button type="submit" name="edit_bank_account" class="btn btn-primary">Kaydet</button>
                     </div>
                 </form>

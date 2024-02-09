@@ -35,7 +35,7 @@
             <!-- Card Header - Accordion -->
             <a href="#siteLogo" class="d-block card-header py-3" data-toggle="collapse" role="button"
                 aria-expanded="true">
-                <h6 class="m-0 font-weight-bold text-primary">LOGO</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Belge</h6>
             </a>
             <!-- Card Content - Collapse -->
             <div class="collapse show" id="siteLogo" style="">

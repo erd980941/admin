@@ -83,6 +83,13 @@
             return $statement->execute();
         }
 
+        public function updateProductStatus($productData){
+            $query= "UPDATE products SET product_status=:product_status WHERE product_id=:product_id";
+            $statement = $this->db->prepare($query);
+            $statement->bindParam(":product_id", $productData['product_id'], PDO::PARAM_INT);
+            $statement->bindParam(":product_status", $productData['product_status'], PDO::PARAM_STR);
+            return $statement->execute();
+        }
         
         public function deleteProduct($productId){
             $query= "DELETE FROM products WHERE product_id=:product_id";

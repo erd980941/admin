@@ -10,7 +10,7 @@ if (!isset($_SESSION['username']) || $_SESSION['adminLoggedIn'] !== true) {
 $magazaSliderModel = new MagazaSlider();
 
 if (isset($_POST['add_magaza_slider'])) {
-    $uploadDirectory = "../../assets/img/slider/";
+    $uploadDirectory = "../../magaza/assets/img/slider/";
     $fileExtension = pathinfo($_FILES['slider_path']['name'], PATHINFO_EXTENSION);
     $uploadedFile = $_FILES['slider_path']['tmp_name'];
     $allowedExtensions = ['jpg', 'jpeg', 'png'];
@@ -57,7 +57,7 @@ if (isset($_POST['edit_magaza_slider'])) {
     $sliderId = $_POST['slider_id'];
 
     if (!empty($_FILES['slider_path']['name'])) {
-        $uploadDirectory = "../../assets/img/slider/";
+        $uploadDirectory = "../../magaza/assets/img/slider/";
         $fileExtension = pathinfo($_FILES['slider_path']['name'], PATHINFO_EXTENSION);
         $uploadedFile = $_FILES['slider_path']['tmp_name'];
         $allowedExtensions = ['jpg', 'jpeg', 'png'];
@@ -125,7 +125,7 @@ if (isset($_GET['slider_id']) && $_GET['delete'] == 'true') {
 
 
     $oldSliderPath = $magazaSliderModel->getSliderPathById($sliderId);
-    unlink("../../assets/img/slider/" . $oldSliderPath);
+    unlink("../../magaza/assets/img/slider/" . $oldSliderPath);
 
     $result = $magazaSliderModel->deleteSliderItem($sliderId);
 

@@ -15,6 +15,7 @@
             'account_name'=> $_POST['account_name'],
             'account_branch_code'=> $_POST['account_branch_code'],
             'account_number'=> $_POST['account_number'],
+            'currency_type'=> $_POST['currency_type'],
             'account_enabled'=> $_POST['account_enabled'],
         );
 
@@ -37,6 +38,7 @@
             'account_name'=> $_POST['account_name'],
             'account_branch_code'=> $_POST['account_branch_code'],
             'account_number'=> $_POST['account_number'],
+            'currency_type'=> $_POST['currency_type'],
             'account_id'=> $_POST['account_id'],
         );
 
@@ -63,10 +65,14 @@
         }
     }
 
-    if(isset($_GET["account_id"])&&$_GET["enabled"]== "true"){
-        $accountId=$_GET['account_id'];
+    if(isset($_GET["account_id"])&&isset($_GET["account_enabled"])){
 
-        $result=$bankAccountModel->updateBankAccountEnabled($accountId);
+        $accountData=[
+            'account_id'=>htmlspecialchars($_GET['account_id']),
+            'account_enabled'=>htmlspecialchars($_GET['account_enabled'])
+        ];
+
+        $result=$bankAccountModel->updateBankAccountEnable($accountData);
         if ($result) {
             header("Location:../pages/bank-account-list?success=true");
             exit();

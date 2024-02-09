@@ -12,9 +12,11 @@ $socialMediaModel = new SocialMedia();
 //--------------------- Site Ayarları ---------------------
 if (isset($_POST['update_social_media'])) {
     $socialMediaData = [
-        'whatsapp' => htmlspecialchars($_POST['whatsapp']),
         'instagram' => htmlspecialchars($_POST['instagram']),
         'facebook' => htmlspecialchars($_POST['facebook']),
+        'linkedin' => htmlspecialchars($_POST['linkedin']),
+        'youtube' => htmlspecialchars($_POST['youtube']),
+        'trendyol' => htmlspecialchars($_POST['trendyol']),
         'hepsiburada' => htmlspecialchars($_POST['hepsiburada']),
         'n11' => htmlspecialchars($_POST['n11']),
         'sahibinden' => htmlspecialchars($_POST['sahibinden']),

@@ -9,7 +9,7 @@
             </div>
             <!-- Card Content - Collapse -->
             <div class="card-body">
-                <img src="../../assets/img/slider/<?php echo $sliderImage ?>" class="img-responsive" width="300">
+                <img src="../../magaza/assets/img/slider/<?php echo $sliderImage ?>" class="img-responsive" width="300">
                 <hr>
                 <form action="../_business/magaza-slider.request.php" method="post" enctype="multipart/form-data">
                     <input class="form-control" type="hidden" id="formFile" name="slider_id"

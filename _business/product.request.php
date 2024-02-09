@@ -36,7 +36,7 @@ session_start();
         }
     }
 
-    if (isset($_POST['edit_product'])) {
+    else if (isset($_POST['edit_product'])) {
         $productData=array(
             'product_id'=> $_POST['product_id'],
             'product_name'=> $_POST['product_name'],
@@ -61,15 +61,29 @@ session_start();
             exit();
         }
     }
-
-    if (isset($_GET['product_id'])&&$_GET['delete']=='true') {
+    else if(isset($_GET['product_id'])&&isset($_GET['update_status'])){
+        $productData=[
+            'product_id'=>$_GET['product_id'],
+            'product_status'=>$_GET['update_status'],
+        ];
+        $result=$productModel->updateProductStatus($productData);
+        if ($result) {
+            header("Location:../pages/product-list?success=true");
+            exit();
+        } else {
+            header("Location:../pages/product-list?error=true");
+            exit();
+        }
+        
+    }
+    else if (isset($_GET['product_id'])&&$_GET['delete']=='true') {
         $productId=htmlspecialchars($_GET['product_id']);
         $productPhotoModel=new ProductPhoto();
         $photos=$productPhotoModel->getPhotosByProductId($productId);
         $result =$productModel->deleteProduct($productId);
         if ($result) {
             foreach ($photos as $photo) {
-                unlink("../../assets/img/products/".$photo['photo_name']);
+                unlink("../../magaza/assets/img/products/".$photo['photo_name']);
             }
             header("Location:../pages/product-list?success=true");
             exit();
@@ -78,6 +92,7 @@ session_start();
             exit();
         }
     }
+    
 
     
 ?>

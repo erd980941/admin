@@ -34,7 +34,7 @@
                                         <?php echo $key + 1 ?>
                                     </td>
                                     <td width="200">
-                                        <img src="../../assets/img/slider/<?php echo $item['slider_path'] ? $item['slider_path'] : 'no-image.jpg' ?>"
+                                        <img src="../../magaza/assets/img/slider/<?php echo $item['slider_path'] ? $item['slider_path'] : 'no-image.jpg' ?>"
                                             class="img-fluid">
                                     </td>
                                     <td>

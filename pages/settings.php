@@ -11,7 +11,8 @@
                 <div class="card-body">
                     <img src="../../assets/img/<?php echo $siteLogoPath ?>" class="img-responsive" width="300">
                     <hr class="my-4">
-                    <form  class="mt-5" action="../_business/site-settings.request.php" method="post" enctype="multipart/form-data">
+                    <form class="mt-5" action="../_business/site-settings.request.php" method="post"
+                        enctype="multipart/form-data">
                         <input class="form-control" type="file" id="formFile" name="site_logo">
                         <div class="d-grid gap-2 mt-3">
                             <button type="submit" name="site_logo" class="btn btn-primary">Kaydet</button>
@@ -73,15 +74,6 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label class="form-label">Maps</label>
-                                    <input type="text" class="form-control"
-                                        value="<?php echo $siteSettingsData['site_maps'] ?>" name="site_maps">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
                                 <div class="mb-3">
                                     <label class="form-label">Site URL</label>
                                     <input type="text" class="form-control"
@@ -184,15 +176,41 @@
                             </div>
                         </div>
 
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Tel</label>
+                                    <input type="text" class="form-control"
+                                        value="<?php echo $siteContactInformationData['site_tel'] ?>" name="site_tel">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Whatsapp</label>
+                                    <input type="text" class="form-control"
+                                        value="<?php echo $siteContactInformationData['site_whatsapp'] ?>" name="site_whatsapp">
+                                </div>
+                            </div>
+                        </div>
                         <div class="mb-3">
-                            <label class="form-label">Tel</label>
+                            <label class="form-label">Email</label>
                             <input type="text" class="form-control"
-                                value="<?php echo $siteContactInformationData['site_tel'] ?>" name="site_tel">
+                                value="<?php echo $siteContactInformationData['site_email'] ?>" name="site_email">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Harita</label>
+                            <input type="text" class="form-control"
+                                value="<?php echo $siteContactInformationData['site_maps'] ?>" name="site_maps">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Adres</label>
                             <textarea class="form-control"
                                 name="site_address"><?php echo $siteContactInformationData['site_address'] ?></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">İçerik</label>
+                            <input type="text" class="form-control"
+                                value="<?php echo $siteContactInformationData['site_contact_text'] ?>" name="site_contact_text">
                         </div>
                         <div class="d-grid gap-2">
                             <button class="btn btn-primary" name="site_contact_information"

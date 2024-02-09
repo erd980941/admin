@@ -21,7 +21,6 @@ class SiteSettings
         $siteKeywords = $siteSettingsData['site_keywords'];
         $siteAuthor = $siteSettingsData['site_author'];
         $siteZopim = $siteSettingsData['site_zopim'];
-        $siteMaps = $siteSettingsData['site_maps'];
         $siteUrl = $siteSettingsData['site_url'];
 
         $query = "UPDATE site_settings SET 
@@ -30,7 +29,6 @@ class SiteSettings
                   site_keywords = :site_keywords, 
                   site_author = :site_author, 
                   site_zopim = :site_zopim,
-                  site_maps = :site_maps,
                   site_url = :site_url
                   WHERE site_id = 0";
 
@@ -40,7 +38,6 @@ class SiteSettings
         $statement->bindParam(':site_keywords', $siteKeywords);
         $statement->bindParam(':site_author', $siteAuthor);
         $statement->bindParam(':site_zopim', $siteZopim);
-        $statement->bindParam(':site_maps', $siteMaps);
         $statement->bindParam(':site_url', $siteUrl);
 
         // Güncelleme işlemini gerçekleştir
@@ -60,23 +57,35 @@ class SiteSettings
     //--------------------- Site İletişim Ayarları  ---------------------
     public function updateContactInformation($contactInformationData)
     {
+        $siteContactText = $contactInformationData['site_contact_text'];
         $siteCity = $contactInformationData['site_city'];
         $siteDistrict = $contactInformationData['site_district'];
         $siteAddress = $contactInformationData['site_address'];
+        $siteMaps = $contactInformationData['site_maps'];
         $siteTel = $contactInformationData['site_tel'];
+        $siteWhatsapp = $contactInformationData['site_whatsapp'];
+        $siteEmail = $contactInformationData['site_email'];
 
         $query = "UPDATE site_contact_information SET 
+                  site_contact_text = :site_contact_text, 
                   site_city = :site_city, 
                   site_district = :site_district, 
                   site_address = :site_address, 
-                  site_tel = :site_tel 
+                  site_maps = :site_maps, 
+                  site_tel = :site_tel,
+                  site_whatsapp = :site_whatsapp,
+                  site_email = :site_email 
                   WHERE site_id = 0";
 
         $statement = $this->db->prepare($query);
+        $statement->bindParam(':site_contact_text', $siteContactText);
         $statement->bindParam(':site_city', $siteCity);
         $statement->bindParam(':site_district', $siteDistrict);
         $statement->bindParam(':site_address', $siteAddress);
+        $statement->bindParam(':site_maps', $siteMaps);
         $statement->bindParam(':site_tel', $siteTel);
+        $statement->bindParam(':site_whatsapp', $siteWhatsapp);
+        $statement->bindParam(':site_email', $siteEmail);
 
         // Güncelleme işlemini gerçekleştir
         if ($statement->execute()) {

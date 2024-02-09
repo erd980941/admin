@@ -20,17 +20,20 @@ $siteSettingsData = array(
     'site_keywords' => htmlspecialchars($siteSettings['site_keywords']),
     'site_author' => htmlspecialchars($siteSettings['site_author']),
     'site_zopim' => htmlspecialchars($siteSettings['site_zopim']),
-    'site_maps' => htmlspecialchars($siteSettings['site_maps']),
     'site_url' => htmlspecialchars($siteSettings['site_url'])
 );
 
 //-----------------İletişim Ayarları------------------
 $siteContactInformationData = $siteSettingsModel->getSiteContactInformation();
 $siteContactInformationData = array(
+    'site_contact_text' => htmlspecialchars($siteContactInformationData['site_contact_text']),
     'site_city' => htmlspecialchars($siteContactInformationData['site_city']),
     'site_district' => htmlspecialchars($siteContactInformationData['site_district']),
     'site_address' => htmlspecialchars($siteContactInformationData['site_address']),
-    'site_tel' => htmlspecialchars($siteContactInformationData['site_tel'])
+    'site_maps' => htmlspecialchars($siteContactInformationData['site_maps']),
+    'site_tel' => htmlspecialchars($siteContactInformationData['site_tel']),
+    'site_whatsapp' => htmlspecialchars($siteContactInformationData['site_whatsapp']),
+    'site_email' => htmlspecialchars($siteContactInformationData['site_email'])
 );
 
 //-----------------LOGO------------------

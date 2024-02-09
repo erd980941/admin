@@ -11,6 +11,18 @@
 
                 <form action="../_business/bank-account.request.php" method="post">
                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label class="form-label">Para Birimi</label>
+                                <select name="currency_type" class="form-select">
+                                    <option value="TRY" selected>TRY</option>
+                                    <option value="USD">USD</option>
+                                    <option value="EUR">EUR</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-6">
                             <div class="mb-3">
                                 <label class="form-label">Banka Adı</label>

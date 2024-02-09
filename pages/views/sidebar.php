@@ -27,7 +27,7 @@
         </a>
     </li>
 
-    <li class="nav-item ">
+    <!-- <li class="nav-item ">
         <a class="nav-link" href="about-us">
         <i class="fa-solid fa-users"></i>
             <span>Hakkımızda</span>
@@ -84,7 +84,6 @@
     </li>
 
     
-
     <li class="nav-item ">
         <a class="nav-link" href="user-list">
         <i class="fa-solid fa-user"></i>
@@ -111,31 +110,51 @@
         <i class="fa-solid fa-truck"></i>
             <span>Siparişler</span>
         </a>
-    </li>
+    </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <!-- <div class="sidebar-heading">
-        Interface
-    </div> -->
+   
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <!-- <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-            aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Components</span>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#anaSite" aria-expanded="true"
+            aria-controls="anaSite">
+            <i class="fa-solid fa-caravan"></i>
+            <span>Ana Site</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="anaSite" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="buttons.html">Buttons</a>
-                <a class="collapse-item" href="cards.html">Cards</a>
+                <a class="collapse-item" href="about-us"><i class="fa-solid fa-users"></i> Hakkımızda</a>
+                <a class="collapse-item"  href="mision-vision"><i class="fa-solid fa-puzzle-piece"></i> Misyon Vizyon</a>
+                <a class="collapse-item"  href="our-document-list"><i class="fa-solid fa-file-pdf"></i> Belgelerimiz</a>
+                <a class="collapse-item"  href="why-us-list"><i class="fa-solid fa-question"></i> Neden Biz</a>
+                <a class="collapse-item"  href="gallery-item-list"><i class="fa-solid fa-images"></i> Galeri</a>
+                <a class="collapse-item"  href="slider-item-list"><i class="fa-solid fa-images"></i> Slider</a>
+                <a class="collapse-item"  href="our-brands-list"><i class="fa-solid fa-tag"></i> Markalarımız</a>
+                <a class="collapse-item"  href="k-category-list"><i class="fa-solid fa-folder-tree"></i> Kategoriler</a>
+                <a class="collapse-item"  href="k-product-list"><i class="fa-solid fa-box"></i> Ürünler</a>
             </div>
         </div>
-    </li> -->
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#market" aria-expanded="true"
+            aria-controls="market">
+            <i class="fa-solid fa-store"></i>
+            <span>Mağaza</span>
+        </a>
+        <div id="market" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="bank-account-list"><i class="fa-solid fa-building-columns"></i> Banka Hesapları</a>
+                <a class="collapse-item"  href="magaza-slider-list"><i class="fa-solid fa-images"></i> Mağaza Slider</a>
+                <a class="collapse-item"  href="user-list"><i class="fa-solid fa-user"></i> Kullanıcılar</a>
+                <a class="collapse-item"  href="category-list"><i class="fa-solid fa-folder-tree"></i> Kategoriler</a>
+                <a class="collapse-item"  href="product-list"><i class="fa-solid fa-box"></i> Ürünler</a>
+                <a class="collapse-item"  href="order-list"><i class="fa-solid fa-truck"></i> Siparişler</a>
+            </div>
+        </div>
+    </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <!-- <li class="nav-item">

@@ -14,9 +14,18 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label class="form-label">Whatsapp</label>
+                                <label class="form-label">LinkedIn</label>
                                     <input type="text" class="form-control"
-                                        value="<?php echo $socialMedia['whatsapp'] ?>" name="whatsapp">
+                                        value="<?php echo $socialMedia['linkedin'] ?>"
+                                        name="linkedin">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                <label class="form-label">YouTube</label>
+                                    <input type="text" class="form-control"
+                                        value="<?php echo $socialMedia['youtube'] ?>"
+                                        name="youtube">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -27,13 +36,20 @@
                                         name="instagram">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label class="form-label">Facebook</label>
                                     <input type="text" class="form-control"
                                         value="<?php echo $socialMedia['facebook'] ?>" name="facebook">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Trendyol</label>
+                                    <input type="text" class="form-control"
+                                        value="<?php echo $socialMedia['trendyol'] ?>" name="trendyol">
                                 </div>
                             </div>
                             <div class="col-md-6">

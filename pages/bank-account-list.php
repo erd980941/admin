@@ -25,7 +25,7 @@
                             <div class="card">
                                 <h5 class="card-header d-flex justify-content-between align-items-center">
                                     <span>
-                                        <?php echo $account['bank_name'] ?>
+                                        <?php echo $account['bank_name'] ?> <b class="text-danger" >(<?php echo $account['currency_type'] ?>)</b>
                                     </span>
                                     <div>
                                         <a href="bank-account-edit?account_id=<?php echo $account['account_id'] ?>&edit=true"
@@ -70,10 +70,12 @@
 
                                     <div class="d-grid gap-2">
                                         <?php if ($account['account_enabled']): ?>
-                                            <span href="#" class="btn btn-success"><i class="fa-solid fa-building-columns"></i>
-                                                Etkin Banka Hesabı</span>
+                                            <a href="../_business/bank-account.request.php?account_id=<?php echo $account['account_id'] ?>&account_enabled=0" 
+                                            class="btn btn-success"><i class="fa-solid fa-building-columns"></i>
+                                                Etkin Banka Hesabı
+                                            </a>
                                         <?php else: ?>
-                                            <a href="../_business/bank-account.request.php?account_id=<?php echo $account['account_id'] ?>&enabled=true"
+                                            <a href="../_business/bank-account.request.php?account_id=<?php echo $account['account_id'] ?>&account_enabled=1"
                                                 class="btn btn-primary">
                                                 <i class="fa-solid fa-building-columns"></i> Etkin Banka Hesabı Yap
                                             </a>
